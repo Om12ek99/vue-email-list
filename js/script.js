@@ -7,6 +7,7 @@ createApp ({
         return {
             mail:"",
             mailArray:[],
+            loadingComplete: false,
         }
     },
 
@@ -28,6 +29,11 @@ createApp ({
                 this.mail = resp.data.response;
                 // qui pusho il valore ottenuto all'interno di un array mailArray
                 this.mailArray.push(this.mail);
+                // Controllo se tutte le email sono state generate
+                if (this.mailArray.length === 10) {
+                    this.loadingComplete = true; // Imposto lo stato di caricamento a true
+                }
+                
               });
           },
     },

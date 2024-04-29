@@ -11,7 +11,9 @@ createApp ({
     },
 
     created() {
-        this.generateMail();
+        for (let i = 0; i < 10; i++) {
+            this.generateMail();
+        }
     },
     methods: {
         generateMail: function () {

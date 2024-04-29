@@ -11,7 +11,9 @@
 
     <div id="app">
         <h1> ciao </h1>
+        <!-- quando loadingComplete è falso esce una scritta loading... -->
         <p v-if="!loadingComplete">Loading...</p>
+        <!-- lista mostrata solo quando loadingComplete è vera, cioè quando l'array è pieno -->
         <ul v-if="loadingComplete">
             <!-- ciclo for per scorrere i valori contenuti nell'array mailArray -->
             <li v-for="curMail in mailArray">

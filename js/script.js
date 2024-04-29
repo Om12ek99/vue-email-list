@@ -7,7 +7,9 @@ createApp ({
         return {
             mail:"",
             mailArray:[],
-            loadingComplete: false,
+            // loadingComplete: false,
+            loadingProgress: 0, // Aggiungo una variabile per tenere traccia del progresso di caricamento
+            emailTarget: 10,
         }
     },
 
@@ -33,6 +35,8 @@ createApp ({
                 if (this.mailArray.length === 10) {
                     this.loadingComplete = true; // Imposto lo stato di caricamento a true
                 }
+                // Calcolo il progresso di caricamento
+                this.loadingProgress = Math.floor((this.mailArray.length / this.emailTarget) * 100);
                 
               });
           },
